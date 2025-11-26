@@ -1,0 +1,78 @@
+<!--
+    File: index.html
+    GUI Assignment: HW4 Part 2 - jQuery UI Slider and Tab Widgets
+    Platon Supranovich, UMass Lowell Computer Science, Platon_Supranovich@student.uml.edu
+    Copyright (c) 2025 by Platon. All rights reserved. May be freely copied or
+    excerpted for educational purposes with credit to the author.
+    updated by PS on November 18, 2025 at 8:00 AM
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dynamic Multiplication Table</title>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css"/>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <h1>Multiplication Table Generator</h1>
+
+    <form id="tableForm" novalidate>
+        <div class="form-grid">
+            <div class="input-group">
+                <label for="startCol">Start Multiplier</label>
+                <div id="startCol-slider" class="slider"></div>
+                <input type="number" name="startCol" id="startCol" required value="0">
+                <div class="error-placeholder"></div>
+            </div>
+
+            <div class="input-group">
+                <label for="endCol">End Multiplier</label>
+                <div id="endCol-slider" class="slider"></div>
+                <input type="number" name="endCol" id="endCol" required value="10">
+                <div class="error-placeholder"></div>
+            </div>
+
+            <div class="input-group">
+                <label for="startRow">Start Multiplicand</label>
+                <div id="startRow-slider" class="slider"></div>
+                <input type="number" name="startRow" id="startRow" required value="0">
+                <div class="error-placeholder"></div>
+            </div>
+
+            <div class="input-group">
+                <label for="endRow">End Multiplicand</label>
+                <div id="endRow-slider" class="slider"></div>
+                <input type="number" name="endRow" id="endRow" required value="10">
+                <div class="error-placeholder"></div>
+            </div>
+        </div>
+
+        <button type="submit">Save Table to New Tab</button>
+    </form>
+    
+    <h2 style="margin-top: 30px;">Current Dynamic Preview</h2>
+    <div id="previewTableContainer" class="table-container">
+        <table id="resultTable" class="resultTable"></table>
+    </div>
+
+    <hr style="width: 100%; max-width: 1200px; margin: 30px 0;">
+
+    <button id="deleteSelectedTabs" type="button" style="display:none; margin-bottom: 10px;">Delete Selected Tables</button>
+    
+    <div id="tabs">
+        <ul id="tabs-list"></ul>
+        <div id="tabs-content"></div>
+    </div>
+    
+    <script src="scripts/index.js"></script>
+</body>
+</html>
